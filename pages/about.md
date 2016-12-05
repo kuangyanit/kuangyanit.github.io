@@ -18,10 +18,10 @@ permalink: /about/
 
 * GitHub：[@kuangyanit](https://github.com/kuangyanit)
 
-### 技能
+<!-- ### 技能
 <div class="btn-inline">
     {% for keyword in site.skill_software_keywords %}
     <button class="btn btn-outline" type="button">{{ keyword }}</button>
     {% endfor %}
 </div>
-
+ -->
