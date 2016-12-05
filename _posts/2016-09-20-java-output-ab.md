@@ -122,7 +122,68 @@ public void print() {
 //    }
 }
 ```
+```C#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
+namespace DemoLinq
+{
+    class Program
+    {
+        public static LinqData dataForTest = new LinqData { Name = "lsb", Score = "85", Age = 15 };
+        static void Main(string[] args)
+        {
+
+            List<LinqData> linqDatas = new List<LinqData>();
+            linqDatas.Add(new LinqData() { Name = "zsgg", Score = "98", Age = 12 }); //这里使用了对象初始化器
+            linqDatas.Add(new LinqData() { Name = "lsb", Score = "85", Age = 15 });
+            linqDatas.Add(new LinqData() { Name = "ww", Score = "87", Age = 15 });
+            linqDatas.Add(new LinqData() { Name = "zd", Score = "85", Age = 18 });
+	        int lastIndex=linqDatas.LastIndexOf(dataForTest); 
+            Console.WriteLine(lastIndex);
+        }
+
+
+    }
+
+    public class LinqData:IEquatable<LinqData>  //自定义类需实现IEquatable<T>接口
+    {
+        public string Name { get; set; }
+        public string Score { get; set; }
+        public int Age { get; set; }
+
+        public bool Equals(LinqData other)
+        { 
+           return Name.Equals(other.Name) && Score.Equals(other.Score) && Age.Equals(other.Age);
+        }
+    }
+
+
+
+    public static class Extend
+    {
+       
+        public static int MyLastIndexOf<TSource>(this IEnumerable<TSource> source, TSource item)  where TSource:IEquatable<TSource>
+        {
+            List<TSource> data = source.ToList();
+            int index = -1;
+            foreach (TSource t in data)
+            {
+                if (t.Equals(item))
+                {
+                    index = data.Count - 1 - data.IndexOf(t);
+                }
+            }
+            return index;
+        }
+
+      
+    }
+}
+
+```
 如果没有特意说明只能在括号里加东西，倒真是个妙计！
 
 同样看得我一愣一愣的还有 [caiwei](https://www.zhihu.com/people/caiwei710) 同学的答案，他和朋友们发现题目里少写了个大括号（真的），于是我们看到他的朋友老方的解决方案：
