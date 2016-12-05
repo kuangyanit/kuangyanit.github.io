@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Links
-description: 没有链接的博客是孤独的
-keywords: 友情链接
+description: star喜加1
+keywords: 个人star的一些项目
 comments: true
 menu: 链接
 permalink: /links/
@@ -10,7 +10,8 @@ permalink: /links/
 
 > God made relatives. Thank God we can choose our friends.
 
-* [Connie酱](http://biedan.org)
-* [只宁静不致远](http://zxning.github.io/)
-* [Blog Something](http://chenxiaoyoyo.github.io)
-* [码志](http://mazhuang.org)
+* [xianhu](https://github.com/xianhu/LearnPython)
+* [521xueweihan](https://github.com/521xueweihan/HelloGitHub)
+* [helloqingfeng](https://github.com/helloqingfeng/Awsome-Front-End-learning-resource)
+* [Reactive-Extensions](https://github.com/Reactive-Extensions/Rx.NET)
+* [Microsoft](https://github.com/Microsoft/vscode)
