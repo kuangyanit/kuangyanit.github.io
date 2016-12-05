@@ -8,8 +8,6 @@ menu: 链接
 permalink: /links/
 ---
 
-> God made relatives. Thank God we can choose our friends.
-
 * [xianhu](https://github.com/xianhu/LearnPython)
 * [521xueweihan](https://github.com/521xueweihan/HelloGitHub)
 * [helloqingfeng](https://github.com/helloqingfeng/Awsome-Front-End-learning-resource)
