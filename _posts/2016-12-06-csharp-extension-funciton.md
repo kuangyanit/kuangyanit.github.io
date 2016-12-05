@@ -122,6 +122,50 @@ public void print() {
 //    }
 }
 ```
+今天在学习Linq的基础知识的时候遇到这么一个问题:
+
+```cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DemoLinq
+{
+    class Program
+    {
+        public static LinqData dataForTest = new LinqData { Name = "lsb", Score = "85", Age = 15 };
+        static void Main(string[] args)
+        {
+            List<LinqData> linqDatas = new List<LinqData>();
+            linqDatas.Add(new LinqData() { Name = "zsgg", Score = "98", Age = 12 }); //这里使用了对象初始化器
+            linqDatas.Add(new LinqData() { Name = "lsb", Score = "85", Age = 15 });
+            linqDatas.Add(new LinqData() { Name = "ww", Score = "87", Age = 15 });
+            linqDatas.Add(new LinqData() { Name = "zd", Score = "85", Age = 18 });
+            int lastIndex=linqDatas.LastIndexOf(dataForTest);
+            Console.WriteLine(lastIndex);
+        }
+
+    }
+
+    public class LinqData
+    {
+        public string Name { get; set; }
+        public string Score { get; set; }
+        public int Age { get; set; }
+
+    }
+
+
+}
+
+```
+这里用List<T>类内置的LastIndexOf方法来求取对象的下标时发现其下标一直为-1（即未在linqDatas集合中找到dataForTest对象），可是该集合中明明包含dataForTest对象的，这是为什么呢？
+
+经过群里好友的提醒我明白了，原来是LastIndexOf方法内置的比较逻辑无法判别出两个LinqData对象是相等的，故而无法找到dataForTest对象，所以返回-1。那么该怎么办呢？我的想法是对LastIndexOf方法进行扩展。故而有了以下的代码：
+
+
 ```cs
 using System;
 using System.Collections.Generic;
@@ -141,7 +185,7 @@ namespace DemoLinq
             linqDatas.Add(new LinqData() { Name = "lsb", Score = "85", Age = 15 });
             linqDatas.Add(new LinqData() { Name = "ww", Score = "87", Age = 15 });
             linqDatas.Add(new LinqData() { Name = "zd", Score = "85", Age = 18 });
-	    int lastIndex=linqDatas.LastIndexOf(dataForTest); 
+	        int lastIndex = linqDatas.LastIndexOf(dataForTest); 
             Console.WriteLine(lastIndex);
         }
 
@@ -184,18 +228,8 @@ namespace DemoLinq
 }
 
 ```
-如果没有特意说明只能在括号里加东西，倒真是个妙计！
+主要思路如下：
 
-同样看得我一愣一愣的还有 [caiwei](https://www.zhihu.com/people/caiwei710) 同学的答案，他和朋友们发现题目里少写了个大括号（真的），于是我们看到他的朋友老方的解决方案：
-
-![add-brace](/images/posts/java/add-brace.jpg)
-
-真是防不胜防啊~不过我喜欢！:+1:
-
-## 参考
-
-* [RednaxelaFX 的回答](https://www.zhihu.com/question/50801791/answer/122781965)
-* [仓鼠君 的回答](https://www.zhihu.com/question/50801791/answer/122773831)
-* [放开那女孩 的回答](https://www.zhihu.com/question/50801791/answer/122769426)
-* [穷小子 的回答](https://www.zhihu.com/question/50801791/answer/122863062)
-* [caiwei 的回答](https://www.zhihu.com/question/50801791/answer/122795854)
+* 自定义类实现IEquatable<T>接口（即实现Equals方法来定义判等规则）
+* 编写扩展方法MyLastIndexOf（注意扩展方法的参数，在这里为this IEnumerable<TSource> source与TSource item）
+* 对扩展方法添加泛型约束（where TSource:IEquatable<TSource>）
