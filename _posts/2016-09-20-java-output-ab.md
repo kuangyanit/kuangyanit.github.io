@@ -141,7 +141,7 @@ namespace DemoLinq
             linqDatas.Add(new LinqData() { Name = "lsb", Score = "85", Age = 15 });
             linqDatas.Add(new LinqData() { Name = "ww", Score = "87", Age = 15 });
             linqDatas.Add(new LinqData() { Name = "zd", Score = "85", Age = 18 });
-	        int lastIndex=linqDatas.LastIndexOf(dataForTest); 
+	    int lastIndex=linqDatas.LastIndexOf(dataForTest); 
             Console.WriteLine(lastIndex);
         }
 
