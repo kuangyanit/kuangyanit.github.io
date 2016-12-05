@@ -16,11 +16,9 @@ permalink: /about/
 
 ## 联系
 
-* GitHub：[@mzlogin](https://github.com/kuangyanit)
+* GitHub：[@kuangyanit](https://github.com/kuangyanit)
 
-## Skill Keywords
-
-#### 技能
+### 技能
 <div class="btn-inline">
     {% for keyword in site.skill_software_keywords %}
     <button class="btn btn-outline" type="button">{{ keyword }}</button>
