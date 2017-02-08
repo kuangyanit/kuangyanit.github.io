@@ -8,9 +8,11 @@ keywords: Plan
 
 # stardust库搭建规划
 
-## 1.stardust库地址：[点这儿](https://github.com/kuangyanit/stardust)
+## 1.stardust库地址
 
-## 2.搭建规划：
+[点这儿](https://github.com/kuangyanit/stardust)
+
+## 2.搭建规划
 
 该库主要分为以下三部分：codingRepository、learningRepository、resourceRepository。
 
