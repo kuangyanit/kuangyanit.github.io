@@ -1,3 +1,11 @@
+---
+layout: post
+title: stardust库搭建规划
+categories: Plan
+description: stardust库搭建规划
+keywords: Plan
+---
+
 # stardust库搭建规划
 
 ## 1.stardust库地址：[点这儿](https://github.com/kuangyanit/stardust)
