@@ -21,7 +21,7 @@ keywords: Plan
 | 板块 | 描述 | 计划完成时间 | 完成状态
 | ------------- |:-------------:| -------------:|----:|
 | cRepo-后端-Logging | 介绍log4net的使用 | 2017.02.12 | √
-| cRepo-后端-ScheduleTask | 介绍Quartz.NET及FluentScheduler的使用  | 2017.02.12 | √(延期1天)
+| cRepo-后端-ScheduleTask | 介绍Quartz.NET及FluentScheduler的使用  | 2017.02.13 | √
 | cRepo-后端-ORM |  | 2017.02.22 | ×
 | cRepo-后端-IOC |  | 2017.02.22 | ×
 | cRepo-后端-Serialization&Deserialization |  | 2017.02.22 | ×
