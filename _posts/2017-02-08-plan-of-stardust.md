@@ -8,6 +8,10 @@ keywords: Plan
 
 # stardust库搭建规划
 
+## 0.延期说明
+
+最近各种项目忙炸了，此库搭建计划暂延后。
+
 ## 1.stardust库地址
 
 [点这儿](https://github.com/kuangyanit/stardust)
@@ -33,3 +37,5 @@ keywords: Plan
 | cRepo-后端-DataBase | | 2017.03.31 | ×
 | cRepo-后端-DistributedCaching |  | 2017.03.31 | ×
 | cRepo-后端-微信开发 | | 2017.04.20 | ×
+
+
