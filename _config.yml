@@ -7,7 +7,7 @@ date_format: "ordinal"
 title: Coding
 subtitle: "Show Me Your Code"
 description: "况颜的个人博客"
-keywords: 码志,kuangyan,code
+keywords: kuangyan,code
 favicon: /favicon.ico
 timezone: Asia/Shanghai
 encoding: "utf-8"
@@ -20,7 +20,7 @@ author: Fan Hongwei
 organization: CCE
 organization_url: http://www.ccegroup.cn
 location: Shanghai, China
-email: chumpma@gmail.com
+email: faq366@163.com
 
 # ---------------- #
 #    Navigation    #
@@ -83,33 +83,21 @@ repository: kuangyanit/kuangyanit.github.io
 #      Socials     #
 # ---------------- #
 github_username: kuangyanit
-# douban_username: freedim
-# facebook_username: mzlogin
 weibo_username: _况颜
-# zhihu_username: mzlogin
-# twitter_username: mzlogin
 
 # ---------------- #
 #      Comments    #
 # ---------------- #
-# support provider: disqus, duoshuo
-comments_provider: duoshuo
-# !!!重要!!! 请修改下面两个用户名为你自己申请的
-# !!!Important!!! Please modify usernames below to yours
-duoshuo_username: kuangyanitblog
-disqus_username: mzlogin
-# 在使用 disqus 的时候可点击显示多说评论框
-lazy_load_duoshuo: true
+# support provider: gitalk
+comments_provider: gitalk
+# https://github.com/gitalk/gitalk#install
+gitalk:
+    owner: kuangyanit
+    repo: blog-comment-plugin
+    clientID: 97386934d1f3734e2898
+    clientSecret: 357ef16a6ad8b61c11bf445ea14f380602d96efa
+# 在使用其它评论组件时可点击显示 Disqus
+lazy_load_disqus : false
 
-# ---------------- #
-#    Analytics     #
-# ---------------- #
-google:
-    analytics_id: UA-80669434-1
 
-# ---------------- #
-#      Datas       #
-# ---------------- #
-# skill_software_keywords: [C#]
-# skill_mobile_app_keywords: [Android, Reverse Engineering]
-# skill_windows_keywords: [Win32 SDK, DuiLib, WTL, COM, WinDbg]
+
